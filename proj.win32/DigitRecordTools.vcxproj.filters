@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\模块">
+      <UniqueIdentifier>{fc08c734-8c35-4d9c-853e-13cea069559a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\显示">
+      <UniqueIdentifier>{22f163a9-7f9b-434e-a19b-48a9b619a543}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Tools.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\RecordClass.cpp">
+      <Filter>Classes\模块</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MyMenu.cpp">
+      <Filter>Classes\模块</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MovieVideoLayer.cpp">
+      <Filter>Classes\模块</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SerialMager.cpp">
+      <Filter>Classes\模块</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes\模块</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\LodingScene.cpp">
+      <Filter>Classes\显示</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logo.cpp">
+      <Filter>Classes\显示</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\mainScene.cpp">
+      <Filter>Classes\显示</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\SettingScene.cpp">
+      <Filter>Classes\显示</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageLayer.cpp" />
+    <ClCompile Include="..\Classes\MessageLayer.cpp">
+      <Filter>Classes\显示</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Tools.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MyMenu.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\RecordClass.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MovieVideoLayer.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SerialMager.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes\模块</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\LodingScene.h">
+      <Filter>Classes\显示</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logo.h">
+      <Filter>Classes\显示</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\mainScene.h">
+      <Filter>Classes\显示</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\SettingScene.h">
+      <Filter>Classes\显示</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageLayer.h" />
+    <ClInclude Include="..\Classes\MessageLayer.h">
+      <Filter>Classes\显示</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
