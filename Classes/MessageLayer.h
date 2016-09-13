@@ -1,7 +1,7 @@
 #pragma once
 #include "Tools.h"
 
-class MessageLayer:public CCLayer,public Reseaver
+class MessageLayer:public CCLayer
 {
 public:
 	static CCScene* getScene();

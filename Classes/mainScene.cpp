@@ -1,8 +1,11 @@
 #include "mainScene.h"
 #include "SettingScene.h"
+#include "MessageLayer.h"
 
 MovieVideoLayer* mainScene::m_pFrontMovieVideoLayer = NULL;
 MovieVideoLayer* mainScene::m_pSideMovieVideoLayer = NULL;
+char* mainScene::m_FilePath1 = new char[64];
+char* mainScene::m_FilePath2 = new char[64];
 bool mainScene::m_bIsPlayVideo = false;
 bool mainScene::m_bIsTurnCamera = true;
 mainScene::mainScene(void)
@@ -44,8 +47,7 @@ bool mainScene::init()
 	m_bSetMode = true;
 	m_curGender = GENDER_MAN;
 	m_curCueType = CUETYPE_YIHAOMU;
-	m_FilePath1 = new char[64];
-	m_FilePath2 = new char[64];
+	
 	sprintf(m_FilePath1,
 		"Video\\sucai%d-%d-%d.avi",
 		m_curGender,
@@ -62,49 +64,49 @@ bool mainScene::init()
 		this->addChild(beijing1);
 
         m_pCueTtpeArr[0] = CCMenuItemImage::create(
-										"HomeUI/yihaomu.png",
-										"HomeUI/yihaomuon.png",
-										"HomeUI/yihaomuon.png",
+										"VideoUI/yihaomu1.png",
+										"VideoUI/yihaomu2.png",
+										"VideoUI/yihaomu2.png",
                                         this,
 										menu_selector(mainScene::menuCueTtpeCallback));
         m_pCueTtpeArr[1] = CCMenuItemImage::create(
-										"HomeUI/mugan.png",
-										"HomeUI/muganon.png",
-										"HomeUI/muganon.png",
+										"VideoUI/mugan1.png",
+										"VideoUI/mugan2.png",
+										"VideoUI/mugan2.png",
                                         this,
 										menu_selector(mainScene::menuCueTtpeCallback));
         m_pCueTtpeArr[2] = CCMenuItemImage::create(
-										"HomeUI/tiegan.png",
-										"HomeUI/tieganon.png",
-										"HomeUI/tieganon.png",
+										"VideoUI/tiegan1.png",
+										"VideoUI/tiegan2.png",
+										"VideoUI/tiegan2.png",
                                         this,
 										menu_selector(mainScene::menuCueTtpeCallback));
         m_pCueTtpeArr[3] = CCMenuItemImage::create(
-										"HomeUI/waqigan.png",
-										"HomeUI/waqiganon.png",
-										"HomeUI/waqiganon.png",
+										"VideoUI/waqigan1.png",
+										"VideoUI/waqigan2.png",
+										"VideoUI/waqigan2.png",
                                         this,
 										menu_selector(mainScene::menuCueTtpeCallback));
 
         m_pGenderArr[0] = CCMenuItemImage::create(
-										"HomeUI/nan.png",
-										"HomeUI/nanon.png",
-										"HomeUI/nanon.png",
+										"VideoUI/nan1.png",
+										"VideoUI/nan2.png",
+										"VideoUI/nan2.png",
                                         this,
 										menu_selector(mainScene::menuGenderCallback));
         m_pGenderArr[1] = CCMenuItemImage::create(
-										"HomeUI/nv.png",
-										"HomeUI/nvon.png",
-										"HomeUI/nvon.png",
+										"VideoUI/nv1.png",
+										"VideoUI/nv2.png",
+										"VideoUI/nv2.png",
                                         this,
 										menu_selector(mainScene::menuGenderCallback));
 		
-		m_pCueTtpeArr[0]->setPosition(ccp(VISIBLEW / 2-450, VISIBLEH*0.9));
-		m_pCueTtpeArr[1]->setPosition(ccp(VISIBLEW / 2-150, VISIBLEH*0.9));
-		m_pCueTtpeArr[2]->setPosition(ccp(VISIBLEW / 2+150, VISIBLEH*0.9));
-		m_pCueTtpeArr[3]->setPosition(ccp(VISIBLEW / 2+450, VISIBLEH*0.9));
-		m_pGenderArr[0]->setPosition(ccp(VISIBLEW / 2-300, VISIBLEH*0.8));
-		m_pGenderArr[1]->setPosition(ccp(VISIBLEW / 2+300, VISIBLEH*0.8));
+		m_pCueTtpeArr[0]->setPosition(ccp(120, VISIBLEH/2+180));
+		m_pCueTtpeArr[1]->setPosition(ccp(120, VISIBLEH/2+60));
+		m_pCueTtpeArr[2]->setPosition(ccp(120, VISIBLEH/2-60));
+		m_pCueTtpeArr[3]->setPosition(ccp(120, VISIBLEH/2-180));
+		m_pGenderArr[0]->setPosition(ccp(1800, VISIBLEH/2+80));
+		m_pGenderArr[1]->setPosition(ccp(1800, VISIBLEH/2-80));
 		
 		m_pCueTtpeArr[0]->setTag(CUETYPE_YIHAOMU);
 		m_pCueTtpeArr[1]->setTag(CUETYPE_MUGAN);
@@ -117,12 +119,11 @@ bool mainScene::init()
 		m_pGenderArr[0]->setEnabled(false);
 	}
 	CCMenuItemImage* pPackagingMenuItem = CCMenuItemImage::create(
-		"SettingUI/qdan1.png",
-		"SettingUI/qdan2.png",
-		"SettingUI/qdan2.png",
+		"VideoUI/queding1.png",
+		"VideoUI/queding2.png",
 		this,
-		menu_selector(mainScene::menuPackagingCallBack));
-	pPackagingMenuItem->setPosition(ccp(VISIBLEW / 2, VISIBLEH*0.2));
+		menu_selector(mainScene::menuCallback));
+	pPackagingMenuItem->setPosition(ccp(VISIBLEW / 2, VISIBLEH*0.15));
 
 	if (!m_pFrontMovieVideoLayer)
 	{
@@ -138,12 +139,12 @@ bool mainScene::init()
 	pBackItem->setPosition(ccp(116, 1000));
 
 	m_pReadyLabel = CCSprite::create("VideoUI/ready.png");
-	m_pReadyLabel->setPosition(ccp(1800, 900));
+	m_pReadyLabel->setPosition(ccp(1800, 800));
 	m_pReadyLabel->setVisible(false);
 	this->addChild(m_pReadyLabel);
 
 	m_pReadyImage = CCSprite::create("VideoUI/xinhao.png");
-	m_pReadyImage->setPosition(ccp(1800, 1000));
+	m_pReadyImage->setPosition(ccp(1800, 900));
 	m_pReadyImage->setVisible(false);
 	this->addChild(m_pReadyImage);
 
@@ -328,14 +329,9 @@ void mainScene::menuGenderCallback(CCObject* pSender)
         }
     }
 }
-void mainScene::PackagingCallBack(CCObject* pSender)
+void mainScene::menuCallback(CCObject* pSender)
 {
-	if(m_pFrontMovieVideoLayer)
-	{
-		m_pFrontMovieVideoLayer->PackagingVideo(m_FilePath1);
-	}
-	if(m_pSideMovieVideoLayer)
-	{
-		m_pSideMovieVideoLayer->PackagingVideo(m_FilePath2);
-	}
+	CCScene* pScene = MessageLayer::getScene();
+
+	CCDirector::sharedDirector()->pushScene(pScene);
 }

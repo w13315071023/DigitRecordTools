@@ -1,9 +1,9 @@
 #include "Tools.h"
 
-extern int Ext_StepNum = 10;
+extern int Ext_StepNum = 1;
 extern int Ext_FFmpegStep = 1;
 extern INT Ext_cameraNum = 0; 
-extern int Ext_VideoSize = 90;
+extern int Ext_VideoSize = 600;
 extern int Ext_VideoSleep = 1000;
 extern int Ext_SerialThreshold = 800;
 extern int Ext_VideoGain = 64;

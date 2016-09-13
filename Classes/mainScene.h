@@ -5,7 +5,7 @@
 #include "MyMenu.h"
 
 USING_NS_CC;
-class mainScene:public CCLayer,public Sender
+class mainScene:public CCLayer
 {
 public:
     static MovieVideoLayer* m_pFrontMovieVideoLayer;
@@ -19,8 +19,8 @@ public:
 
 	float m_curSingle;
 	unsigned int m_curMsg;
-	char* m_FilePath1;
-	char* m_FilePath2;
+	static char* m_FilePath1;
+	static char* m_FilePath2;
 	static bool m_bIsPlayVideo;
 	static bool m_bIsTurnCamera;
 	bool m_bSetMode;
@@ -40,10 +40,9 @@ public:
     void menuBackCallback(CCObject* pSender);
 	void menuCueTtpeCallback(CCObject* pSender);
 	void menuGenderCallback(CCObject* pSender);
+	void menuCallback(CCObject* pSender);
 	void CallbackRePlay(CCObject* pSender);
 	void CallbackPreview(CCObject* pSender);
 
-	virtual void PackagingCallBack(CCObject* pSender);
-	
 };
 

@@ -4,7 +4,7 @@
 CCScene* MessageLayer::getScene()
 {
 	CCScene* pScene = CCScene::create();
-	CCLayer* pLayer = CCLayer::create();
+	MessageLayer* pLayer = MessageLayer::create();
 
 	pScene->addChild(pLayer);
 	return pScene;
@@ -32,17 +32,49 @@ void MessageLayer::update(float dt)
 	switch(m_TimeNum)
 	{
 	case 0:
+		if(m_Acting)
+		{
+			return;
+		}
+		m_TimeNum++;
 		break;
 	case 1:
+		if(m_Acting)
+		{
+			return;
+		}
+		Packaging();
+		m_TimeNum++;
+		break;
+	case 2:
+		if(m_Acting)
+		{
+			return;
+		}
+		m_MsgLabel->setString(GBKToUTF8("±£´æÍê³É").c_str());
+		m_TimeNum++;
+		break;
+	case 3:
+		if(m_Acting)
+		{
+			return;
+		}
+		Sleep(2000);
+		m_TimeNum++;
+		CCDirector::sharedDirector()->popScene();
 		break;
 	}
 }
 void MessageLayer::Packaging()
 {
 	m_Acting = true;
-	if(m_MsgDelegate)
+	if(mainScene::m_pFrontMovieVideoLayer)
 	{
-		m_MsgDelegate->PackagingCallBack(NULL);
+		mainScene::m_pFrontMovieVideoLayer->PackagingVideo(mainScene::m_FilePath1);
+	}
+	if(mainScene::m_pSideMovieVideoLayer)
+	{
+		mainScene::m_pSideMovieVideoLayer->PackagingVideo(mainScene::m_FilePath2);
 	}
 	m_Acting = false;
 }

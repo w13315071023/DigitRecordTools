@@ -113,7 +113,6 @@ class Sender
 public:
 	virtual void Record(bool isRecord) = 0;
 	virtual void RecordOk() = 0;
-	virtual void PackagingCallBack(CCObject* pSender) = 0;
 };
 class Reseaver
 {
@@ -121,12 +120,10 @@ public:
 	
 	Sender* m_Delegate1;
 	Sender* m_Delegate2;
-	Sender* m_MsgDelegate;
 	Reseaver(void)
 	{
 		m_Delegate1 = NULL;
 		m_Delegate2 = NULL;
-		m_MsgDelegate = NULL;
 	}
 	void setDelegate1(Sender* del)
 	{
@@ -135,10 +132,6 @@ public:
 	void setDelegate2(Sender* del)
 	{
 		m_Delegate2 = del;
-	}
-	void setMsgDelegate(Sender* del)
-	{
-		m_MsgDelegate = del;
 	}
 };
 inline float GetTime(void)

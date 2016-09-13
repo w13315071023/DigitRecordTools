@@ -120,7 +120,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 		{
 			cocosMain(hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 		}
-		__except (code = GetExceptionCode(), DumpMiniDump(hFile, GetExceptionInformation()), EXCEPTION_EXECUTE_HANDLER) //�������쳣, ��¼�쳣��code, ����dump!!
+		__except (code = GetExceptionCode(), DumpMiniDump(hFile, GetExceptionInformation()), EXCEPTION_EXECUTE_HANDLER)
 		{
 			printf("%x\n", code);
 			wchar_t msg[512];
