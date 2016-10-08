@@ -49,14 +49,16 @@ bool mainScene::init()
 	m_curCueType = CUETYPE_YIHAOMU;
 	
 	sprintf(m_FilePath1,
-		"Video\\sucai%d-%d-%d.avi",
+		DEMOVIDEO,
+		Ext_FrameRate,
 		m_curGender,
 		m_curCueType,
 		FRONT);
 	sprintf(m_FilePath2,
-		"Video\\sucai%d-%d-%d.avi",
-		m_curCueType,
+		DEMOVIDEO,
+		Ext_FrameRate,
 		m_curGender,
+		m_curCueType,
 		SIDE);
 	{//UI显示
 		CCSprite* beijing1 = CCSprite::create("VideoUI/beijing1.png");
@@ -292,12 +294,14 @@ void mainScene::menuCueTtpeCallback(CCObject* pSender)
 			//将标识控件移动到选择标签前
 			m_pCueTtpeArr[i]->setEnabled(false);
 			sprintf(m_FilePath1,
-				"Video\\sucai%d-%d-%d.avi",
+				DEMOVIDEO,
+				Ext_FrameRate,
 				m_curGender,
 				m_curCueType,
 				FRONT);
 			sprintf(m_FilePath2,
-				"Video\\sucai%d-%d-%d.avi",
+				DEMOVIDEO,
+				Ext_FrameRate,
 				m_curGender,
 				m_curCueType,
 				SIDE);
@@ -317,14 +321,16 @@ void mainScene::menuGenderCallback(CCObject* pSender)
             //将标识控件移动到选择标签前
 			m_pGenderArr[i]->setEnabled(false);
 			sprintf(m_FilePath1,
-				"Video\\sucai%d-%d-%d.avi",
-				m_curCueType,
+				DEMOVIDEO,
+				Ext_FrameRate,
 				m_curGender,
+				m_curCueType,
 				FRONT);
 			sprintf(m_FilePath2,
-				"Video\\sucai%d-%d-%d.avi",
-				m_curCueType,
+				DEMOVIDEO,
+				Ext_FrameRate,
 				m_curGender,
+				m_curCueType,
 				SIDE);
         }
     }

@@ -52,6 +52,8 @@ USING_NS_CC_EXT;
 #define VISIBLEH CCDirector::sharedDirector()->getVisibleSize().height
 #define BIANKUANG 20
 
+#define DEMOVIDEO "C:\\DemoVideo\\%d\\Demo%d-%d-%d.avi"
+
 extern INT Ext_cameraNum;
 extern int Ext_VideoSize;
 extern int Ext_VideoSleep;
@@ -59,6 +61,7 @@ extern int Ext_SerialThreshold;
 extern int Ext_VideoGain;
 extern int Ext_StepNum;
 extern int Ext_FFmpegStep;
+extern int Ext_FrameRate;
 
 extern int Ext_VideoExposureTime;
 
@@ -68,6 +71,7 @@ extern bool Ext_TiaoShi;
 extern bool Ext_IsFrontCamera;
 extern bool Ext_IsTurnCamera;
 extern bool Ext_IsTurnEnd;
+extern bool Ext_Is300Frames;
 
 enum MENUTAG
 {

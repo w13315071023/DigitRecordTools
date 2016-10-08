@@ -63,7 +63,7 @@ bool RecordClass::init(tSdkCameraDevInfo CameraInfo)
 	CameraGetImageResolution(m_hCamera, &pImageResolution);
 	BufferSize = pImageResolution.iWidth*pImageResolution.iHeight * 3;
 
-	m_BufferIndexMax = 300*2*Ext_StepNum;
+	m_BufferIndexMax = 300*3*Ext_StepNum;
 
 	for (size_t i = 0; i < m_BufferIndexMax; i++)
 	{

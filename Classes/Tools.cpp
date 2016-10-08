@@ -8,6 +8,7 @@ extern int Ext_VideoSleep = 1000;
 extern int Ext_SerialThreshold = 800;
 extern int Ext_VideoGain = 64;
 extern int Ext_VideoExposureTime = 3300;
+extern int Ext_FrameRate = 60;
 
 extern bool Ext_IsThreadOn = false;
 extern bool Ext_IsTurnEnd = false;
@@ -15,6 +16,7 @@ extern bool Ext_IsRecordBegin = false;
 extern bool Ext_TiaoShi = true;
 extern bool Ext_IsFrontCamera = true;
 extern bool Ext_IsTurnCamera = false;
+extern bool Ext_Is300Frames = false;
 
 string GBKToUTF8(const string& strGBK)
 {

@@ -48,7 +48,6 @@
     <ClCompile Include="..\Classes\SettingScene.cpp">
       <Filter>Classes\display</Filter>
     </ClCompile>
-    <ClCompile Include="MessageLayer.cpp" />
     <ClCompile Include="..\Classes\MessageLayer.cpp">
       <Filter>Classes\display</Filter>
     </ClCompile>
@@ -90,7 +89,6 @@
     <ClInclude Include="..\Classes\SettingScene.h">
       <Filter>Classes\display</Filter>
     </ClInclude>
-    <ClInclude Include="MessageLayer.h" />
     <ClInclude Include="..\Classes\MessageLayer.h">
       <Filter>Classes\display</Filter>
     </ClInclude>

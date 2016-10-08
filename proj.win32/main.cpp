@@ -67,7 +67,14 @@ int  cocosMain(HINSTANCE hInstance,
 
 
 	eglView->setViewName("Test");
-	eglView->setFrameSize(1600, 900);
+	if (Ext_TiaoShi)
+	{
+		eglView->setFrameSize(1600, 900);
+	}
+	else
+	{
+		eglView->setFrameSize(1920, 1080);
+	}
 
 
 	RECT rcWindow;
@@ -86,7 +93,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                        LPTSTR    lpCmdLine,
                        int       nCmdShow)
 {
-	Ext_TiaoShi = true;
+	Ext_TiaoShi = false;
 	if (!Ext_TiaoShi)
 	{
 		freopen("DeBugMsg.txt", "w", stdout);

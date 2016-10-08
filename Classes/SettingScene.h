@@ -11,6 +11,9 @@ public:
 	CCLabelTTF* m_VideoSleepLabel;
 	CCLabelTTF* m_SerialThresholdLabel;
 	CCLabelTTF* m_VideoGainLabel;
+
+	CCMenuItemImage* m_pFrames60;
+	CCMenuItemImage* m_pFrames300;
 public:
 	static CCScene* getScene();
 	CREATE_FUNC(SettingScene);
@@ -22,6 +25,7 @@ public:
 	void valueChanged(CCObject* sender, CCControlEvent controlEvent);
 	void menuStartCallback(CCObject* pSender);
 	void menuExitCallback(CCObject* pSender);
+	void menuFramesCallBack(CCObject* obj);
 	void SetCameraCallBack(CCObject* obj);
 	void SetQingjingCallBack(CCObject* obj);
 public:

@@ -34,7 +34,29 @@ bool LodingScene::init()
 	
 	CameraSdkInit(1);
 	CameraEnumerateDevice(cameraInfo, &Ext_cameraNum);
-
+	if(Ext_cameraNum == 1)
+	{
+		if(cameraInfo[0].acPortType[0] == 'N'&&cameraInfo[0].acPortType[1] == 'E'&&cameraInfo[0].acPortType[2] == 'T')
+		{
+			Ext_Is300Frames = true;
+		}
+		else
+		{
+			Ext_Is300Frames = false;
+		}
+	}
+	else
+	{
+		if(cameraInfo[0].acPortType[0] == 'N'&&cameraInfo[0].acPortType[1] == 'E'&&cameraInfo[0].acPortType[2] == 'T'&&
+			cameraInfo[1].acPortType[0] == 'N'&&cameraInfo[1].acPortType[1] == 'E'&&cameraInfo[1].acPortType[2] == 'T')
+		{
+			Ext_Is300Frames = true;
+		}
+		else
+		{
+			Ext_Is300Frames = false;
+		}
+	}
 	printf("³õÊ¼»¯LodingScene\n");
 	SerialMager::getInstence();
 	if (Ext_cameraNum != 0)
@@ -54,9 +76,19 @@ bool LodingScene::init()
 		Ext_VideoSleep = doc["VideoSleep"].GetInt();
 		Ext_SerialThreshold = doc["SerialThreshold"].GetInt();
 		Ext_VideoGain = doc["VideoGain"].GetInt();
-		Ext_VideoExposureTime = doc["VideoExposureTime"].GetDouble();
 		Ext_StepNum = doc["StepNum"].GetInt();
 		Ext_FFmpegStep = doc["FFmpegStep"].GetInt();
+		Ext_FrameRate = doc["FrameRate"].GetInt();
+	}
+	if(Ext_FrameRate == 300)
+	{
+		Ext_VideoExposureTime = 3300;
+		Ext_VideoSize = 750;
+	}
+	else
+	{
+		Ext_VideoExposureTime = 15000;
+		Ext_VideoSize = 150;
 	}
 	CCSprite* pBackGround = CCSprite::create("HomeUI/Bg.png");
 	pBackGround->setPosition(ccp(VISIBLEW / 2, VISIBLEH / 2));
