@@ -132,7 +132,7 @@ bool SettingScene::init()
 			else
 			{
 				m_pFrames60->setEnabled(false);
-				Ext_VideoExposureTime = 15000;
+				Ext_VideoExposureTime = 16600;
 				Ext_VideoSize = 150;
 			}
 		}
@@ -140,7 +140,7 @@ bool SettingScene::init()
 		{
 			m_pFrames300->setEnabled(false);
 			m_pFrames60->setEnabled(false);
-			Ext_VideoExposureTime = 15000;
+			Ext_VideoExposureTime = 16600;
 			Ext_VideoSize = 150;
 		}
 	}
@@ -290,7 +290,7 @@ void SettingScene::menuFramesCallBack(CCObject* obj)
 		m_pFrames60->setEnabled(false);
 		m_pFrames300->setEnabled(true);
 		Ext_FrameRate = 60;
-		Ext_VideoExposureTime = 15000;
+		Ext_VideoExposureTime = 16600;
 		Ext_VideoSize = 150;
 	}
 	else

@@ -87,7 +87,7 @@ bool LodingScene::init()
 	}
 	else
 	{
-		Ext_VideoExposureTime = 15000;
+		Ext_VideoExposureTime = 16600;
 		Ext_VideoSize = 150;
 	}
 	CCSprite* pBackGround = CCSprite::create("HomeUI/Bg.png");
